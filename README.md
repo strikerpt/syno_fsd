@@ -12,3 +12,4 @@ Il contient :
 * L'activation du blocage d'un compte après 5 tentatives
 * L'activation des connexions via SSH
 * La mise en place d'un VPN OpenVPN
+* La mise en place d'un domaine dans le NAS
