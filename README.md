@@ -1,6 +1,6 @@
 # Guide pour configurer un NAS Synology
 
-Le fichier [guide_nas_synology.md](https://github.com/strikerpt/syno_fsd/blob/master/guide_nas_synology.md#mettre-en-place-en-acc%C3%A8s-externe-au-nas-synology) permet de vous guider pour installer et configurer votre NAS Synology.
+Le fichier [guide_nas_synology.md](https://github.com/strikerpt/syno_fsd/blob/master/guide_nas_synology.md#mettre-en-place-en-acc%C3%A8s-externe-au-nas-synology) permet de vous guider pour configurer votre NAS Synology.
 
 Il contient :
 
@@ -14,3 +14,5 @@ Il contient :
 * La mise en place d'un VPN OpenVPN
 * La mise en place d'un domaine dans le NAS
 * La mise en place de 3 conteneurs docker pour héberger un site web avec base de données
+
+Il contient aussi un dockerfile et docker-compose.yml si vous voudriez héberger un site web, avec une base de données, avec docker depuis le NAS Synology.
