@@ -1,11 +1,22 @@
-# Guide de configuration d'un NAS Synology    
+# Guide de configuration d'un NAS Synology
 
-## Créer un compte Quickconnect
-<br>
+## Table de matières
+
+1. [Créer un compte Quickconnect](guide_nas_synology.md#Créer-un-compte-Quickconnect)
+2. [Rediriger les connexions HTTP vers HTTPS](guide_nas_synology.md#Rediriger-les-connexions-HTTP-vers-HTTPS)
+3. [Mettre en place un accès externe au NAS Synology](guide_nas_synology.md#Mettre-en-place-un-accès-externe-au-NAS-Synology)
+4. [Mettre le NAS avec une IP statique](guide_nas_synology.md#Mettre-le-NAS-avec-une-IP-statique)
+5. [Activer la double authentification pour les utilisateurs](guide_nas_synology.md#Activer-la-double-authentification-pour-les-utilisateurs)
+6. [Activer le blocage d'un compte après 5 tentatives](guide_nas_synology.md#Activer-le-blocage-d'un-compte-après-5-tentatives)
+7. [Activer les connexions via SSH](guide_nas_synology.md#Activer-le-sconnexions-via-SSH)
+8. [Mettre en place un VPN OpenVPN](guide_nas_synology.md#Mettre-en-place-un-VPN-OpenVPN)
+9. [Joindre le NAS à un domaine](guide_nas_synology.md#Joindre-le-NAS-à-un-domaine)
+10. [Héberger un siteweb + base de données sur le NAS avec docker](guide_nas_synology.md#Héberger-un-siteweb-+-base-de-données-sur-le-NAS-avec-docker)
+
+## Créer un compte Quickconnect  
 
 Quickconnect permet de vous connecter à votre NAS Synology sur le cloud de Synology.   
   
-
 1. Allez sur le **Panneau de Configuration**
 
 ![ecran_principal](https://user-images.githubusercontent.com/39523323/107482090-86b59d80-6b7f-11eb-8e60-050757559ac9.png)
@@ -40,12 +51,9 @@ Désormais, vous pouvez vous connectez avec le lien qui est donné sur **DSM**.<
 ## Mettre en place un accès externe au NAS Synology
 
   
-
-
 Ceci vous permet d'accéder à votre NAS Synology via le navigateur web.
   
   
-
 1. Allez sur le **Panneau de Configuration**
 
 ![panneau_de_configuration](https://user-images.githubusercontent.com/39523323/107479765-dbefb000-6b7b-11eb-9d09-e905daa79836.png)
@@ -97,15 +105,13 @@ Allez sur votre la page de configuration de votre fournisseur Internet (Ex: `192
   
 ![ip_statique](https://user-images.githubusercontent.com/39523323/107484849-48ba7880-6b83-11eb-8482-bc2dbd7b523a.png)
 
-## Activer la double authentification pour un utilisateur
+## Activer la double authentification pour les utilisateurs
 
 La double authentification permet à l'utilisateur de garantir que si son mot de passe est compromis, le pirate doit encore passer par une étape supplémentaire avant de s'y connecter
   
   
-
 Si vous n'avez pas encore activer les notifications par email, faites-le avant d'activer la double authentification. Si c'est déjà fait, sautez directement au point 4.
   
-
 1. Allez sur **Panneau de Configuration**
 
 ![ecran_principal](https://user-images.githubusercontent.com/39523323/107482090-86b59d80-6b7f-11eb-8e60-050757559ac9.png)
@@ -144,7 +150,6 @@ Vous pouvez décider si seulement les adminis ont besoin de la double authentifi
 ## Activer le blocage d'un compte après 5 tentatives
 
 Ceci permet d'éviter les attaques par force brute (essayer plusieurs fois plusieurs mots de passe jusqu'à avoir le bon mot de passe).
-  
   
   
 1. Allez sur **Panneau de Configuration**
@@ -246,6 +251,40 @@ Allez sur votre la page de configuration de votre fournisseur Internet (Ex: `192
 ![rejoindre_domaine](https://user-images.githubusercontent.com/39523323/107528933-a8804600-6bba-11eb-9fbe-0c775f3ea1da.png)
 
 4. Vous pouvez cliquer sur le bouton **Vérification de l'état du domaine** pour voir le bon fonctionnement du domaine dans le NAS et voir l'onglet **Utilisateurs du domaine** et **Groupe de domaine** pour voir si tous les utilisateurs et groupes du domaines ont été bien importés
+
+## Héberger un siteweb + base de données sur le NAS avec docker
+
+1. Allez sur **Centre de paquets**
+
+![centre_de_paquets](https://user-images.githubusercontent.com/39523323/107520250-81714680-6bb1-11eb-9d0e-3d8816b8a127.png)
+
+2. Ecrivez **docker** sur la barre de recherche et téléchargez l'application
+
+![installer_docker](https://user-images.githubusercontent.com/39523323/107612269-2473a000-6c46-11eb-986e-68ccee5ab241.png)
+
+3. Connectez-vous via SSH au NAS Synology (Ex: `ssh -A admin@192.168.1.150 -p 111`)
+
+4. Créez les répertoires `img`, `html`et `db`
+  * `img` : permet d'avoir le dockerfile
+  * `db` : permet d'avoir les données et fichiers de configuration de la base de données
+  * `html` : permet d'avoir les fichiers du site web (Ex: `index.php`)  
+  
+  
+Ces répertoires permettent à vous de les modifier, ajouter ou supprimer directement depuis le NAS Synology sans avoir besoin de vous connecter directement au conteneur.
+
+5. Créez votre dockerfile (Ex: [dockerfile](https://github.com/strikerpt/syno_fsd/blob/master/dockerfile)) et créer votre docker-compose.yml (Ex: [docker_compose.yml](https://github.com/strikerpt/syno_fsd/blob/master/docker-compose.yml))
+
+6. Si vous utilisez l'exemple de docker-compose, il faut que vous changiez les **chemins des volumes**, **le chemin du build**, **les mots de passe** de la db et des utilisateurs de la db et **les ports** si vous utilisez d'autres.
+
+7. Une fois les changements terminés, lancez la commande `docker-compose up --build` au même endroit où vous avez créer votre docker-compose.yml
+
+8. Une fois terminé le docker-compose et que tout s'est bien passé, vous pouvez directement, depuis le **terminal**, vérifier que les conteneurs sont actifs, en lançant la commande `docker ps` et la commande `docker image ls` pour vérifier les images qu'il a téléchargé.  
+Si vous préférez, c'est possible de vérifier via l'interface graphique. Allez sur l'application **Docker** et cliquez sur le menu **Conteneur** et vérifiez que les 3 conteneurs sont actifs. De même pour les images, cliquez sur le menu **Image** pour vérifiez les images qui à téléchargé.
+
+9. Pour accéder aux pages du site web, allez sur votre navigateur et écrivez `IP_du_NAS:port_web_server`. Pour accéder à la base de données sur le navigateur avec phpmyadmin, écrivez `IP_du_NAS:port_phpmyadmin`.  
+(Ex: Pages web : `192.168.1.150:8888` et Base de données : `192.168.1.150:8081`)
+
+
 
 
 
