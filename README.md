@@ -15,4 +15,4 @@ Il contient :
 * La mise en place d'un domaine dans le NAS
 * La mise en place de 3 conteneurs docker pour héberger un site web avec base de données
 
-Il contient aussi un dockerfile et docker-compose.yml si vous voudriez héberger un site web, avec une base de données, avec docker depuis le NAS Synology.
+Il contient aussi un [dockerfile](https://github.com/strikerpt/syno_fsd/blob/master/dockerfile) et [docker-compose.yml](https://github.com/strikerpt/syno_fsd/blob/master/docker-compose.yml) si vous voudriez héberger un site web, avec une base de données, avec docker depuis le NAS Synology.
