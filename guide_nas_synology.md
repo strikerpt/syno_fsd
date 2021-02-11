@@ -27,7 +27,7 @@ Quickconnect permet de vous connecter à votre NAS Synology sur le cloud de Syno
 
 3. Activez QuickConnect, en cochant la case et en mettant un QuickConnect ID.
 
-![quickconnect](https://user-images.githubusercontent.com/39523323/107479501-7996af80-6b7b-11eb-88fe-804c9ba2d145.png)
+![quickconnect](https://user-images.githubusercontent.com/39523323/107646206-fdcf5c80-6c79-11eb-8e97-fd35dbeca61a.png)
 
 Désormais, vous pouvez vous connectez avec le lien qui est donné sur **DSM**.  
 (Ex: `http://QuickConnect.to/Quickconnect_ID`)   
@@ -61,7 +61,7 @@ Ceci vous permet d'accéder à votre NAS Synology via le navigateur web.
 
 3. Cliquez sur l'onglet **DDNS** et cliquez sur le bouton **Ajouter**
 
-![activer_ddns](https://user-images.githubusercontent.com/39523323/107496472-a655c180-6b91-11eb-82c6-5451e2e886c9.png)
+![activer_ddns](https://user-images.githubusercontent.com/39523323/107646483-4be46000-6c7a-11eb-8ed9-80402dd0c233.png)
 
 4. Cliquez sur la case **Activer la prise en charge DDNS** et choisissez le fournisseur de service (Je vous conseille le **Synology**) et le nom d'hôte.
 Activer le **Heartbeat** pour que Synology vous envoie des notifications en cas d'interruption de la connexion.
