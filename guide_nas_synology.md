@@ -25,17 +25,15 @@ Quickconnect permet de vous connecter à votre NAS Synology sur le cloud de Syno
 
 ![panneau_de_configuration](https://user-images.githubusercontent.com/39523323/107479765-dbefb000-6b7b-11eb-9d09-e905daa79836.png)
 
-3. Activez QuickConnect en cochant la case et en mettant un QuickConnect ID.
+3. Activez QuickConnect, en cochant la case et en mettant un QuickConnect ID.
 
 ![quickconnect](https://user-images.githubusercontent.com/39523323/107479501-7996af80-6b7b-11eb-88fe-804c9ba2d145.png)
 
-Désormais, vous pouvez vous connectez avec le lien qui est donné sur **DSM**.<br>
+Désormais, vous pouvez vous connectez avec le lien qui est donné sur **DSM**.  
 (Ex: `http://QuickConnect.to/Quickconnect_ID`)   
-
   
 ## Rediriger les connexions HTTP vers HTTPS
-  
-  
+    
 1. Allez sur le **Panneau de Configuration**
 
 ![ecran_principal](https://user-images.githubusercontent.com/39523323/107482090-86b59d80-6b7f-11eb-8e60-050757559ac9.png)
@@ -49,7 +47,6 @@ Désormais, vous pouvez vous connectez avec le lien qui est donné sur **DSM**.<
 ![https](https://user-images.githubusercontent.com/39523323/107501438-ace73780-6b97-11eb-9fc2-2f1004633e1f.png)
 
 ## Mettre en place un accès externe au NAS Synology
-
   
 Ceci vous permet d'accéder à votre NAS Synology via le navigateur web.
   
@@ -73,13 +70,12 @@ Vous pouvez aussi configuré l'adresse externe, en cliquant sur le bouton **Conf
 ![ajouter_ddns](https://user-images.githubusercontent.com/39523323/107496469-a655c180-6b91-11eb-8d33-6a532956820a.png)
 
 5. Il faut que vous fassiez une **redirection de port sur votre routeur** pour que, depuis l'extérieur, vous atteignez le NAS.
-Allez sur votre la page de configuration de votre fournisseur Internet (Ex: `192.168.1.1`) et redirigez un port de votre choix vers le port 5001 (celui du NAS dans votre réseau local)
+Allez sur la page de configuration de votre fournisseur Internet (Ex: `192.168.1.1`) et redirigez un port de votre choix vers le port 5001 (celui du NAS par défaut)
 
 6. Désormais, vous pouvez vous connectez au NAS Synology sur votre navigateur avec `https://nom_d'hôte:port`
 
 ## Mettre le NAS avec une IP statique
   
-
 1. Allez sur le **panneau de configuration**
 
 ![ecran_principal](https://user-images.githubusercontent.com/39523323/107482090-86b59d80-6b7f-11eb-8e60-050757559ac9.png)
@@ -97,17 +93,17 @@ Allez sur votre la page de configuration de votre fournisseur Internet (Ex: `192
 ![modifier](https://user-images.githubusercontent.com/39523323/107484831-448e5b00-6b83-11eb-87d0-74442f65160a.png)
 
 5. Cliquez sur **Utiliser la configuration manuelle** et saisissez :
-    * Adresse IP
-    * Masque de sous réseau
-    * Passerelle
-    * DNS Server
+    * L'Adresse IP
+    * Le Masque de sous réseau
+    * La Passerelle
+    * L'adresse IP du serveur DNS
   
   
 ![ip_statique](https://user-images.githubusercontent.com/39523323/107484849-48ba7880-6b83-11eb-8482-bc2dbd7b523a.png)
 
 ## Activer la double authentification pour les utilisateurs
 
-La double authentification permet à l'utilisateur de garantir que si son mot de passe est compromis, le pirate doit encore passer par une étape supplémentaire avant de s'y connecter
+La double authentification permet de vous garantir que si votre mot de passe est compromis, le pirate doit encore passer par une étape supplémentaire avant de s'y connecter.
   
   
 Si vous n'avez pas encore activer les notifications par email, faites-le avant d'activer la double authentification. Si c'est déjà fait, sautez directement au point 4.
@@ -138,7 +134,7 @@ Si vous n'avez pas encore activer les notifications par email, faites-le avant d
 ![utilisateur](https://user-images.githubusercontent.com/39523323/107512872-b8daf580-6ba7-11eb-9dd6-1336aab514ba.png)
 
 6. Cliquez sur l'onglet **Avancé** et activez la vérification en 2 étapes, en cochant la case **Appliquer la vérification en 2 étapes pour les utilisateurs suivants**.
-Vous pouvez décider si seulement les adminis ont besoin de la double authentification ou tous les utilisateurs.
+Vous pouvez décider si seulement les admins ont besoin de la double authentification ou tous les utilisateurs.
 
 ![activer_2a](https://user-images.githubusercontent.com/39523323/107512593-541f9b00-6ba7-11eb-902a-267668808f91.png)
 
@@ -160,7 +156,7 @@ Ceci permet d'éviter les attaques par force brute (essayer plusieurs fois plusi
 
 ![securite](https://user-images.githubusercontent.com/39523323/107517153-a794e780-6bad-11eb-8c1c-c59104b8fc3d.png)
 
-3. Cliquez sur l'onglet **Compte** et cochez la case **ACtiver le blocage auto**. Mettez les tentatives de connexion en combien de minutes vous désirez pour bloquer le compte.
+3. Cliquez sur l'onglet **Compte** et cochez la case **Activer le blocage auto**. Mettez les tentatives de connexion en combien de minutes que vous désirez pour bloquer le compte.
 
 ![blocage_compte](https://user-images.githubusercontent.com/39523323/107517389-ff335300-6bad-11eb-8761-fb8a64114f8e.png)
 
@@ -180,22 +176,22 @@ Ceci permet d'éviter les attaques par force brute (essayer plusieurs fois plusi
 
 ## Mettre en place un VPN OpenVPN
 
-1. Allez sur **Centre de paquets** pour télécharger l'application VPN
+1. Allez sur **Centre de paquets**
 
 ![centre_de_paquets](https://user-images.githubusercontent.com/39523323/107520250-81714680-6bb1-11eb-9d0e-3d8816b8a127.png)
 
-2. Ecrivez sur la barre de recherche le mot **vpn** et téléchargez l'application qu'il vous propose
+2. Ecrivez sur la barre de recherche le mot **vpn** et téléchargez l'application vpn
 
 ![installer_application](https://user-images.githubusercontent.com/39523323/107520266-846c3700-6bb1-11eb-8d1a-bf3a9b187e8e.png)
 
-3. Allez sur l'application, cliquez sur le menu **OpenVPN** et cochez la case **ACtiver le serveur OpenVPN**. 
+3. Allez sur l'application, cliquez sur le menu **OpenVPN** et cochez la case **Activer le serveur OpenVPN**. 
 Faites les changements nécessaires pour la configuration de votre VPN.
 
 ![activer_openvpn](https://user-images.githubusercontent.com/39523323/107520239-7e765600-6bb1-11eb-8118-d76f02391745.png)
 
-4. Une fois terminer, cliquez sur le bouton **Exporter la configuration**. Un fichier contiendra la configuration `.ovpn` que vous devez modifier.
+4. Une fois terminé, cliquez sur le bouton **Exporter la configuration**. Un fichier `.zip` que contient la configuration `.ovpn` que vous devez modifier.
 Pour modifier ce fichier, ouvrez-le avec un éditeur de texte (Ex: `vscode` ou `notepad++`).
-Mettez votre IP privé et le port que vous avez mis sur  `remote YOUR_SERVER_IP port`
+Changer `YOUR_SERVER_IP` par votre IP privé
 
 ### Avant de mettre la configuration dans un client openvpn, il faut **additionner le port d'OpenVPN au parefeu** du NAS Synology et faire une redirection de port sur votre routeur.
   
@@ -228,7 +224,7 @@ Mettez votre IP privé et le port que vous avez mis sur  `remote YOUR_SERVER_IP 
 12. Il faut que vous fassiez une **redirection de port sur votre routeur** pour que, depuis l'extérieur, vous atteignez le NAS.
 Allez sur votre la page de configuration de votre fournisseur Internet (Ex: `192.168.1.1`) et redirigez le port que vous avez choisi au moment de créer le VPN vers le même port.
 
-13. Désormais, vous pouvez mettre fichier `.ovpn` sur votre client OpenVPN
+13. Désormais, vous pouvez mettre fichier `.ovpn` sur votre client OpenVPN (Ex: [OpenVPN Connect](https://openvpn.net/download-open-vpn/))
 
 ## Joindre le NAS à un domaine 
 
@@ -242,15 +238,15 @@ Allez sur votre la page de configuration de votre fournisseur Internet (Ex: `192
 
 3. Cliquez sur l'onglet **Domaine** et cochez la case **Rejoindre le domaine**. Ensuite, saisissez :
    * Le domaine
-   * Le Serveur DNS
+   * L'adresse IP du serveur DNS
    * Le type de serveur de domaine
-   * Mode de gestion
+   * Le mode de gestion
   
 (Optionnel) Vous pouvez cochez la case **Options avancées du domaine** pour un environnement de réseau spécifique
 
 ![rejoindre_domaine](https://user-images.githubusercontent.com/39523323/107528933-a8804600-6bba-11eb-9fbe-0c775f3ea1da.png)
 
-4. Vous pouvez cliquer sur le bouton **Vérification de l'état du domaine** pour voir le bon fonctionnement du domaine dans le NAS et voir l'onglet **Utilisateurs du domaine** et **Groupe de domaine** pour voir si tous les utilisateurs et groupes du domaines ont été bien importés
+4. Vous pouvez cliquer sur le bouton **Vérification de l'état du domaine** pour voir le bon fonctionnement du domaine dans le NAS et cliquez sur l'onglet **Utilisateurs du domaine** et **Groupe de domaine** pour voir si tous les utilisateurs et groupes du domaine ont été bien importés
 
 ## Héberger un siteweb + base de données sur le NAS avec docker
 
@@ -270,16 +266,22 @@ Allez sur votre la page de configuration de votre fournisseur Internet (Ex: `192
   * `html` : permet d'avoir les fichiers du site web (Ex: `index.php`)  
   
   
-Ces répertoires permettent à vous de les modifier, ajouter ou supprimer directement depuis le NAS Synology sans avoir besoin de vous connecter directement au conteneur.
+Ces répertoires permettent à vous de les modifier, ajouter ou supprimer directement depuis le NAS Synology, sans avoir besoin de vous connecter directement au conteneur.
 
-5. Créez votre dockerfile (Ex: [dockerfile](https://github.com/strikerpt/syno_fsd/blob/master/dockerfile)) et créer votre docker-compose.yml (Ex: [docker_compose.yml](https://github.com/strikerpt/syno_fsd/blob/master/docker-compose.yml))
+5. Créez votre dockerfile (Ex: [dockerfile](https://github.com/strikerpt/syno_fsd/blob/master/dockerfile)) et créez votre docker-compose.yml (Ex: [docker_compose.yml](https://github.com/strikerpt/syno_fsd/blob/master/docker-compose.yml))
 
 6. Si vous utilisez l'exemple de docker-compose, il faut que vous changiez les **chemins des volumes**, **le chemin du build**, **les mots de passe** de la db et des utilisateurs de la db et **les ports** si vous utilisez d'autres.
 
-7. Une fois les changements terminés, lancez la commande `docker-compose up --build` au même endroit où vous avez créer votre docker-compose.yml
+7. Une fois les changements terminés, lancez la commande `docker-compose up --build` au même endroit où vous avez créé votre docker-compose.yml
 
 8. Une fois terminé le docker-compose et que tout s'est bien passé, vous pouvez directement, depuis le **terminal**, vérifier que les conteneurs sont actifs, en lançant la commande `docker ps` et la commande `docker image ls` pour vérifier les images qu'il a téléchargé.  
-Si vous préférez, c'est possible de vérifier via l'interface graphique. Allez sur l'application **Docker** et cliquez sur le menu **Conteneur** et vérifiez que les 3 conteneurs sont actifs. De même pour les images, cliquez sur le menu **Image** pour vérifiez les images qui à téléchargé.
+Si vous préférez, c'est possible de vérifier via l'interface graphique. Allez sur l'application **Docker** et cliquez sur le menu **Conteneur** et vérifiez que les 3 conteneurs sont actifs. 
+
+![conteneur](https://user-images.githubusercontent.com/39523323/107623593-dcf70f00-6c59-11eb-9ec3-423802bccaf1.png)
+
+De même pour les images, cliquez sur le menu **Image** pour vérifiez les images qui à téléchargé.
+
+![images](https://user-images.githubusercontent.com/39523323/107623594-de283c00-6c59-11eb-8198-1e0c191c9689.png)
 
 9. Pour accéder aux pages du site web, allez sur votre navigateur et écrivez `IP_du_NAS:port_web_server`. Pour accéder à la base de données sur le navigateur avec phpmyadmin, écrivez `IP_du_NAS:port_phpmyadmin`.  
 (Ex: Pages web : `192.168.1.150:8888` et Base de données : `192.168.1.150:8081`)
